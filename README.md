@@ -23,7 +23,9 @@ Live Demo :-"http://127.0.0.1:5500/simson/index.html"
 ---
 
 ## 📷 Screenshots
-(Add screenshots of your game here once hosted or while running locally.)
+<img width="1184" height="893" alt="Screenshot (44)" src="https://github.com/user-attachments/assets/e38046fb-b771-4fd9-b3e9-6893a0ef3720" />
+
+<img width="1069" height="897" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/adcf1920-e9ac-4dea-98f3-7609ffb5c184" />
 
 ---
 
