@@ -8,7 +8,7 @@ let highScore = localStorage.getItem('simon-highscore') || 0;
 // Update UI initially
 document.getElementById("best-score").innerText = highScore;
 
-// Audio Context Setup
+// Audio Setup
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
@@ -16,10 +16,10 @@ const frequencies = {
   green: 164.81, // E3
   red: 329.63,   // E4
   yellow: 261.63, // C4
-  blue: 440      // A4 (classic simon uses G (196), C(261), E(329), G(392) usually, but these work well)
+  blue: 440      // A4
 };
 
-// Elements
+// UI Elements
 const startBtn = document.getElementById("start-btn");
 const levelDisplay = document.getElementById("level-title");
 const gameOverModal = document.getElementById("game-over-modal");
