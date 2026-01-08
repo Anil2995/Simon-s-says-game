@@ -2,12 +2,10 @@
 
 > **Test your memory limits with this classic electronic game, re-imagined for the web.**
 
+[![Live Demo](https://img.shields.io/badge/demo-live-success.svg?style=for-the-badge&logo=vercel)](https://simon-says-game-siddem-anil-kumars-projects.vercel.app/)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/v2.0-modern-brightgreen)
 
 ## 🚀 Overview
-
-[![Live Demo](https://img.shields.io/badge/demo-live-success.svg?style=for-the-badge&logo=github)](https://anil2995.github.io/Simon-s-says-game/)
 
 Simon Says is a memory challenge where you must repeat a growing sequence of colors and sounds. This web-based version features a modern, responsive design, synthetic audio effects, and high-score tracking.
 
@@ -16,7 +14,7 @@ Simon Says is a memory challenge where you must repeat a growing sequence of col
 *   **🧠 Infinite Levels**: The pattern gets longer every round. How far can you go?
 *   **🔊 Synthetic Audio**: Uses the Web Audio API to generate classic game tones without external assets.
 *   **🏆 High Score Tracking**: Your best performance is saved automatically using LocalStorage.
-*   **� Fully Responsive**: Works perfectly on mobile, tablet, and desktop.
+*   **📱 Fully Responsive**: Works perfectly on mobile, tablet, and desktop.
 *   **🎨 Modern UI**: Clean aesthetics with glow effects and smooth animations.
 
 ## 🎮 How to Play
