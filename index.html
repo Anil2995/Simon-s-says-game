@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says | Memory Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1 class="title">Simon <span class="highlight">Says</span></h1>
+            <p class="subtitle">Test your memory limits!</p>
+        </header>
+
+        <div class="game-board">
+            <div class="btn green" id="green" data-color="green"></div>
+            <div class="btn red" id="red" data-color="red"></div>
+            <div class="btn yellow" id="yellow" data-color="yellow"></div>
+            <div class="btn blue" id="blue" data-color="blue"></div>
+
+            <div class="controls-center">
+                <div class="game-info">
+                    <span class="label">LEVEL</span>
+                    <span id="level-title">0</span>
+                </div>
+                <button id="start-btn" class="start-btn">
+                    <i class="fa-solid fa-play"></i> START
+                </button>
+                <div class="high-score">
+                    Best: <span id="best-score">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p><i class="fa-solid fa-circle-info"></i> Watch the sequence and repeat it.</p>
+        </div>
+
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Game Over!</h2>
+                <p>You reached Level <span id="final-score">0</span></p>
+                <button id="restart-btn" class="primary-btn">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

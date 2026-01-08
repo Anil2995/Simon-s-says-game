@@ -1,50 +1,44 @@
-# Simon's Says Game 🎮
+# Simon Says Game 🎮
 
-A fun memory game built with **HTML, CSS, and JavaScript**.  
-The player has to follow the sequence of button flashes and repeat them in the correct order. Each level adds one more step to the sequence, testing your memory and focus.
+> **Test your memory limits with this classic electronic game, re-imagined for the web.**
 
----
-Live Demo :-"http://127.0.0.1:5500/simson/index.html"
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/v2.0-modern-brightgreen)
 
-## 🚀 Features
-- Four colorful buttons (Red, Green, Yellow, Purple)
-- Increasing difficulty with each level
-- Interactive sound & button animations
-- Restart option after wrong input
-- Simple and lightweight – runs in any browser
+## 🚀 Overview
 
----
+[![Live Demo](https://img.shields.io/badge/demo-live-success.svg?style=for-the-badge&logo=github)](https://anil2995.github.io/Simon-s-says-game/)
 
-## 🛠️ Technologies Used
-- **HTML5**
-- **CSS3**
-- **JavaScript (ES6)**
+Simon Says is a memory challenge where you must repeat a growing sequence of colors and sounds. This web-based version features a modern, responsive design, synthetic audio effects, and high-score tracking.
 
----
+## ✨ Features
 
-## 📷 Screenshots
-<img width="1184" height="893" alt="Screenshot (44)" src="https://github.com/user-attachments/assets/e38046fb-b771-4fd9-b3e9-6893a0ef3720" />
-
-<img width="1069" height="897" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/adcf1920-e9ac-4dea-98f3-7609ffb5c184" />
-
----
+*   **🧠 Infinite Levels**: The pattern gets longer every round. How far can you go?
+*   **🔊 Synthetic Audio**: Uses the Web Audio API to generate classic game tones without external assets.
+*   **🏆 High Score Tracking**: Your best performance is saved automatically using LocalStorage.
+*   **� Fully Responsive**: Works perfectly on mobile, tablet, and desktop.
+*   **🎨 Modern UI**: Clean aesthetics with glow effects and smooth animations.
 
 ## 🎮 How to Play
-1. Press any key to start the game.
-2. Watch the sequence of button flashes.
-3. Repeat the sequence by clicking the buttons in the same order.
-4. The sequence grows by one step each level.
-5. A wrong click ends the game – press any key to restart.
+
+1.  Click **START** to begin.
+2.  Watch the flashing sequence and listen to the tones.
+3.  Repeat the sequence by clicking the colored buttons in the exact same order.
+4.  If you get it right, the sequence becomes one step longer.
+5.  If you miss a beat, it's **GAME OVER**!
+
+## 🛠️ Tech Stack
+
+-   **HTML5**
+-   **CSS3** (Variables, Grid, Keyframe Animations)
+-   **JavaScript** (ES6+, AudioContext API, LocalStorage)
+
+## 👥 Author
+
+**Siddem Anil Kumar**
+
+*   📧 Email: [siddemanilkumar@gmail.com](mailto:siddemanilkumar@gmail.com)
+*   💻 GitHub: [Anil2995](https://github.com/Anil2995)
 
 ---
-
-## 📂 Installation & Setup
-To run this project locally:
-```bash
-# Clone the repository
-git clone https://github.com/Anil2995/Simon-s-says-game.git
-
-# Navigate into the project folder
-cd Simon-s-says-game
-
-# Open index.html in your browser
+*Built with logic and ❤️.*

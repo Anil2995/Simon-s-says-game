@@ -1,0 +1,324 @@
+:root {
+    --bg-color: #121212;
+    --green: #00A74A;
+    --red: #ff3e3e;
+    /* Brighter red */
+    --yellow: #FCD000;
+    --blue: #205BF7;
+    --light-green: #5cff9f;
+    --light-red: #ff8e8e;
+    --light-yellow: #fff38e;
+    --light-blue: #8eafff;
+    --text-color: #ffffff;
+    --panel-bg: #2c2c2c;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.highlight {
+    color: var(--red);
+}
+
+.subtitle {
+    color: #888;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+/* Game Board - Classic Circle Look */
+.game-board {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #000;
+    padding: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    /* Gap between buttons */
+    overflow: hidden;
+    /* For circle clip */
+}
+
+/* The Buttons */
+.btn {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.1s;
+    border: none;
+}
+
+.green {
+    background-color: var(--green);
+    border-top-left-radius: 100% 100%;
+}
+
+.red {
+    background-color: var(--red);
+    border-top-right-radius: 100% 100%;
+}
+
+.yellow {
+    background-color: var(--yellow);
+    border-bottom-left-radius: 100% 100%;
+}
+
+.blue {
+    background-color: var(--blue);
+    border-bottom-right-radius: 100% 100%;
+}
+
+/* Flash Effects */
+.btn.flash,
+.btn:active {
+    opacity: 1;
+    filter: brightness(1.5);
+    transform: scale(0.98);
+}
+
+.green.flash {
+    box-shadow: 0 0 30px var(--light-green) inset;
+}
+
+.red.flash {
+    box-shadow: 0 0 30px var(--light-red) inset;
+}
+
+.yellow.flash {
+    box-shadow: 0 0 30px var(--light-yellow) inset;
+}
+
+.blue.flash {
+    box-shadow: 0 0 30px var(--light-blue) inset;
+}
+
+/* Center Controls */
+.controls-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: var(--bg-color);
+    border-radius: 50%;
+    border: 8px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.game-info {
+    margin-bottom: 10px;
+}
+
+.label {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    font-weight: 700;
+}
+
+#level-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.start-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    background: #ff5c5c;
+}
+
+.high-score {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.instructions {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #333;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    color: var(--red);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.primary-btn {
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* Game Over Flash Body */
+.game-over-flash {
+    animation: shake 0.5s;
+    background-color: #3d0000;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+@media (max-width: 400px) {
+    .game-board {
+        width: 280px;
+        height: 280px;
+    }
+}
