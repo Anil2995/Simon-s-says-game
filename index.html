@@ -5,51 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Says | Memory Challenge</title>
+    <meta name="description"
+        content="Test your memory with this classic Simon Says game. Challenge yourself to reach higher levels!">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
     <div class="app-container">
         <header>
-            <h1 class="title">Simon <span class="highlight">Says</span></h1>
-            <p class="subtitle">Test your memory limits!</p>
+            <div class="logo-container">
+                <img src="logo.png" alt="Simon Says Logo" class="game-logo">
+            </div>
+            <h1 class="title">
+                <span class="title-word">Simon</span>
+                <span class="title-word highlight">Says</span>
+            </h1>
+            <p class="subtitle">
+                <i class="fa-solid fa-brain"></i> Test your memory limits!
+            </p>
         </header>
 
-        <div class="game-board">
-            <div class="btn green" id="green" data-color="green"></div>
-            <div class="btn red" id="red" data-color="red"></div>
-            <div class="btn yellow" id="yellow" data-color="yellow"></div>
-            <div class="btn blue" id="blue" data-color="blue"></div>
+        <div class="game-wrapper">
+            <div class="game-board">
+                <div class="btn green" id="green" data-color="green" role="button" aria-label="Green button"></div>
+                <div class="btn red" id="red" data-color="red" role="button" aria-label="Red button"></div>
+                <div class="btn yellow" id="yellow" data-color="yellow" role="button" aria-label="Yellow button"></div>
+                <div class="btn blue" id="blue" data-color="blue" role="button" aria-label="Blue button"></div>
 
-            <div class="controls-center">
-                <div class="game-info">
-                    <span class="label">LEVEL</span>
-                    <span id="level-title">0</span>
+                <div class="controls-center">
+                    <div class="game-info">
+                        <span class="label">LEVEL</span>
+                        <span id="level-title" class="level-number">0</span>
+                    </div>
+                    <button id="start-btn" class="start-btn" aria-label="Start game">
+                        <i class="fa-solid fa-play"></i> START
+                    </button>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <i class="fa-solid fa-trophy"></i>
+                            <span class="stat-value" id="best-score">0</span>
+                        </div>
+                    </div>
                 </div>
-                <button id="start-btn" class="start-btn">
-                    <i class="fa-solid fa-play"></i> START
-                </button>
-                <div class="high-score">
-                    Best: <span id="best-score">0</span>
+            </div>
+
+            <!-- Stats Panel -->
+            <div class="stats-panel">
+                <div class="stat-card">
+                    <i class="fa-solid fa-fire"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Current Level</span>
+                        <span class="stat-number" id="current-level">0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-crown"></i>
+                    <div class="stat-info">
+                        <span class="stat-label">Best Score</span>
+                        <span class="stat-number" id="best-score-display">0</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="instructions">
-            <p><i class="fa-solid fa-circle-info"></i> Watch the sequence and repeat it.</p>
-        </div>
-
-        <div id="game-over-modal" class="modal hidden">
-            <div class="modal-content">
-                <h2>Game Over!</h2>
-                <p>You reached Level <span id="final-score">0</span></p>
-                <button id="restart-btn" class="primary-btn">Try Again</button>
+            <div class="instruction-card">
+                <i class="fa-solid fa-circle-info"></i>
+                <p><strong>How to Play:</strong> Watch the sequence and repeat it by clicking the colored buttons in the
+                    same order.</p>
+            </div>
+            <div class="tips">
+                <span class="tip"><i class="fa-solid fa-lightbulb"></i> Pro tip: Press 'A' to start</span>
+                <span class="tip"><i class="fa-solid fa-volume-high"></i> Turn on sound for better experience</span>
             </div>
         </div>
+
+        <!-- Game Over Modal -->
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-icon">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <h2>Game Over!</h2>
+                <p class="modal-text">You reached level <span id="final-score" class="final-score-number">0</span></p>
+                <div id="new-record" class="new-record hidden">
+                    <i class="fa-solid fa-star"></i> New Record! <i class="fa-solid fa-star"></i>
+                </div>
+                <button id="restart-btn" class="primary-btn">
+                    <i class="fa-solid fa-rotate-right"></i> Try Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer with Developer Identity -->
+        <footer class="developer-footer">
+            <div class="footer-content">
+                <p class="developer-credit">
+                    <i class="fa-solid fa-code"></i> Developed with <span class="heart">❤️</span> by <strong>Siddem Anil
+                        Kumar</strong>
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:siddemanilkumar@gmail.com" class="contact-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i> siddemanilkumar@gmail.com
+                    </a>
+                    <a href="https://github.com/Anil2995" target="_blank" rel="noopener noreferrer" class="contact-link"
+                        aria-label="GitHub Profile">
+                        <i class="fa-brands fa-github"></i> @Anil2995
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="script.js"></script>
