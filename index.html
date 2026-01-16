@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Says | Memory Challenge</title>
-    <meta name="description"
-        content="Test your memory with this classic Simon Says game. Challenge yourself to reach higher levels!">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Test your memory with this classic Simon Says game.">
+    <link rel="stylesheet" href="styles.css?v=1.3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -37,95 +35,46 @@
             </p>
         </header>
 
-        <div class="game-wrapper">
-            <div class="game-board">
-                <div class="btn green" id="green" data-color="green" role="button" aria-label="Green button"></div>
-                <div class="btn red" id="red" data-color="red" role="button" aria-label="Red button"></div>
-                <div class="btn yellow" id="yellow" data-color="yellow" role="button" aria-label="Yellow button"></div>
-                <div class="btn blue" id="blue" data-color="blue" role="button" aria-label="Blue button"></div>
-
-                <div class="controls-center">
-                    <div class="game-info">
-                        <span class="label">LEVEL</span>
-                        <span id="level-title" class="level-number">0</span>
-                    </div>
-                    <button id="start-btn" class="start-btn" aria-label="Start game">
-                        <i class="fa-solid fa-play"></i> START
-                    </button>
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <i class="fa-solid fa-trophy"></i>
-                            <span class="stat-value" id="best-score">0</span>
-                        </div>
-                    </div>
+        <div class="game-board-container">
+            <div class="game-info">
+                <div class="level-indicator">
+                    <span class="label">Level</span>
+                    <span id="level-title" class="value">0</span>
+                </div>
+                <div class="high-score">
+                    <span class="label">Record</span>
+                    <span id="high-score" class="value">0</span>
                 </div>
             </div>
 
-            <!-- Stats Panel -->
-            <div class="stats-panel">
-                <div class="stat-card">
-                    <i class="fa-solid fa-fire"></i>
-                    <div class="stat-info">
-                        <span class="stat-label">Current Level</span>
-                        <span class="stat-number" id="current-level">0</span>
+            <div class="simon-board">
+                <div class="pad-grid">
+                    <div class="pad red" id="red" role="button" aria-label="Red pad"></div>
+                    <div class="pad yellow" id="yellow" role="button" aria-label="Yellow pad"></div>
+                    <div class="pad green" id="green" role="button" aria-label="Green pad"></div>
+                    <div class="pad purple" id="purple" role="button" aria-label="Purple pad"></div>
+                </div>
+                <button class="start-btn" id="start-btn">
+                    <div class="btn-content">
+                        <i class="fa-solid fa-play"></i>
+                        <span>START</span>
                     </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-crown"></i>
-                    <div class="stat-info">
-                        <span class="stat-label">Best Score</span>
-                        <span class="stat-number" id="best-score-display">0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="instructions">
-            <div class="instruction-card">
-                <i class="fa-solid fa-circle-info"></i>
-                <p><strong>How to Play:</strong> Watch the sequence and repeat it by clicking the colored buttons in the
-                    same order.</p>
-            </div>
-            <div class="tips">
-                <span class="tip"><i class="fa-solid fa-lightbulb"></i> Pro tip: Press 'A' to start</span>
-                <span class="tip"><i class="fa-solid fa-volume-high"></i> Turn on sound for better experience</span>
-            </div>
-        </div>
-
-        <!-- Game Over Modal -->
-        <div id="game-over-modal" class="modal hidden">
-            <div class="modal-content">
-                <div class="modal-icon">
-                    <i class="fa-solid fa-gamepad"></i>
-                </div>
-                <h2>Game Over!</h2>
-                <p class="modal-text">You reached level <span id="final-score" class="final-score-number">0</span></p>
-                <div id="new-record" class="new-record hidden">
-                    <i class="fa-solid fa-star"></i> New Record! <i class="fa-solid fa-star"></i>
-                </div>
-                <button id="restart-btn" class="primary-btn">
-                    <i class="fa-solid fa-rotate-right"></i> Try Again
                 </button>
             </div>
         </div>
 
-        <!-- Footer with Developer Identity -->
-        <footer class="developer-footer">
-            <div class="footer-content">
-                <p class="developer-credit">
-                    <i class="fa-solid fa-code"></i> Developed with <span class="heart">❤️</span> by <strong>Siddem Anil
-                        Kumar</strong>
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:siddemanilkumar@gmail.com" class="contact-link" aria-label="Email">
-                        <i class="fa-solid fa-envelope"></i> siddemanilkumar@gmail.com
-                    </a>
-                    <a href="https://github.com/Anil2995" target="_blank" rel="noopener noreferrer" class="contact-link"
-                        aria-label="GitHub Profile">
-                        <i class="fa-brands fa-github"></i> @Anil2995
+        <footer class="game-footer">
+            <div class="developer-card">
+                <p class="dev-tag">Developed by</p>
+                <h2 class="dev-name">Siddem Anil Kumar</h2>
+                <div class="dev-contact">
+                    <a href="mailto:siddemanilkumar@gmail.com" class="contact-link">
+                        <i class="fa-solid fa-envelope"></i>
+                        siddemanilkumar@gmail.com
                     </a>
                 </div>
             </div>
+            <p class="copyright">&copy; 2024 Memory Challenge Project</p>
         </footer>
     </div>
 
